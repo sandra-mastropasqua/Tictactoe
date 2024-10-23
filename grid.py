@@ -1,12 +1,11 @@
 
-from truc import *
 empty = '_'
 matrice = [
         [empty for i in range(3)],
         [empty for i in range(3)],
         [empty for i in range(3)]
     ]
-def grid():
+def grille():
     
             print("_____"*5)
             print("|"+"___"+f"{matrice[0][0]}"+"___"+"|"+"___"+f"{matrice[0][1]}"+"___"+"|"+"___"+f"{matrice[0][2]}"+"___"+"|")
