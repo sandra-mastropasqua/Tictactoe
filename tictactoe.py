@@ -1,3 +1,5 @@
+from algo import *
+
 def utilisateur():
     symbole = ""
     X = ''
@@ -13,22 +15,7 @@ def utilisateur():
             if symbole_joueur2 == symbole :
                 print(f"Le joueur 1 a deja choisis {symbole}. Choisissez l'autre symbole.")
         return symbole_joueur2
-    utilisateur2()
-utilisateur()
 
-a=0
-b=1
-c=2
-d=3
-e=4
-f=5
-g=6
-h=7
-i=8
-print("_____"*5)
-print("|"+"___"+f"{a}"+"___"+"|"+"___"+f"{b}"+"___"+"|"+"___"+f"{c}"+"___"+"|")
-print("|"+"___"+f"{d}"+"___"+"|"+"___"+f"{e}"+"___"+"|"+"___"+f"{f}"+"___"+"|")
-print("|"+"___"+f"{g}"+"___"+"|"+"___"+f"{h}"+"___"+"|"+"___"+f"{i}"+"___"+"|")
 
 
 
