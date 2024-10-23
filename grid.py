@@ -1,10 +1,12 @@
 
+from algo import *
 empty = '_'
 matrice = [
         [empty for i in range(3)],
         [empty for i in range(3)],
         [empty for i in range(3)]
     ]
+def grid():
 def grille():
     
             print("_____"*5)
