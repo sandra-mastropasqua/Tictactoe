@@ -51,15 +51,4 @@ def winorlose():
             print("|"+"___"+f"{matrice[1][0]}"+"___"+"|"+"___"+f"{matrice[1][1]}"+"___"+"|"+"___"+f"{matrice[1][2]}"+"___"+"|")
             print("|"+"___"+f"{matrice[2][0]}"+"___"+"|"+"___"+f"{matrice[2][1]}"+"___"+"|"+"___"+f"{matrice[2][2]}"+"___"+"|")
 
-        if matrice [0][0] == matrice [1][1] == matrice [2][2] 
-        == "x":
-            print("Le joueur X a gagné")
-        if matrice [0][2] == matrice [1][1] == matrice [2][0] == "x":
-            print("Le joueur X a gagné")
-
-        if matrice [0][0] == matrice [1][1] == matrice [2][2] == "o":
-            print("Le joueur O a gagné")
-        if matrice [0][0] == matrice [1][1] == matrice [2][2] == "o":
-            print("Le joueur O a gagné")
-
         
