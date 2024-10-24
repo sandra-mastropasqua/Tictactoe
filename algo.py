@@ -6,43 +6,81 @@ def winorlose():
         [empty for i in range(3)]
     ]
     counter = 0
+    print("Bienvenue dans le tictactoe de Muriel, Sandra et Emmanuelle :)")
+    print("La grille de jeu est agencée avec 3 lignes et 3 colonnes. Voici les index de chaque case :")
+    print("_____"*5)
+    print("|"+"  "+"0,0"+"  "+"|"+"  "+"0,1"+"  "+"|"+"  "+"0,2"+"  "+"|")
+    print("|"+"_______"+"|"+"_______"+"|"+"_______"+"|")
+    print("|"+"  "+"1,0"+"  "+"|"+"  "+"1,1"+"  "+"|"+"  "+"1,2"+"  "+"|")
+    print("|"+"_______"+"|"+"_______"+"|"+"_______"+"|")
+    print("|"+"  "+"2,0"+"  "+"|"+"  "+"2,1"+"  "+"|"+"  "+"2,2"+"  "+"|")
+    print("|"+"_______"+"|"+"_______"+"|"+"_______"+"|")
     
-    player = input('quel signe voulez vous jouer en premier')
+    player = input('Entrez le signe du joueur 1 (x ou o) : ')
     for row in matrice:
         for case in row:
             c = 0
             while c < 3:
                 if matrice[0][c] == matrice[1][c] == matrice [2][c] == "X":
-                    print("X a gagn")
+                    if player == 'x':
+                        print("Joueur 1 a gagné")
+                    else : print("Joueur 2 a gagné")
                     return
                 if matrice[c] == ['X','X','X']:
-                    print("X a gagné")
+                    if player == 'x':
+                        print("Joueur 1 a gagné")
+                    else : print("Joueur 2 a gagné")
                     return
                 if matrice[0][c] == matrice[1][c] == matrice [2][c] == "O":
-                    print("0 a gagné")
+                    if player == 'o':
+                        print("Joueur 1 a gagné")
+                    else : print("Joueur 2 a gagné")
                     return
                 if matrice[c] == ["O","O","O"] :
-                    print("O a gagné")
+                    if player == 'o':
+                        print("Joueur 1 a gagné")
+                    else : print("Joueur 2 a gagné")
+                    return
+                if matrice [0][0] == matrice [1][1] == matrice [2][2] == "X":
+                    if player == 'x':
+                        print("Joueur 1 a gagné")
+                    else : print("Joueur 2 a gagné")
+                    return
+                if matrice [0][2] == matrice [1][1] == matrice [2][0] == "X":
+                    if player == 'x':
+                        print("Joueur 1 a gagné")
+                    else : print("Joueur 2 a gagné")
+                    return
+
+                if matrice [0][0] == matrice [1][1] == matrice [2][2] == "O":
+                    if player == 'o':
+                        print("Joueur 1 a gagné")
+                    else : print("Joueur 2 a gagné")
+                    return
+                if matrice [0][2] == matrice [1][1] == matrice [2][0] == "O":
+                    if player == 'o':
+                        print("Joueur 1 a gagné")
+                    else : print("Joueur 2 a gagné")
                     return
                 c +=1
-            ligne = int(input("quel rang voulez vous jouer ?"))
-            col = int(input("dans quelle colonne"))
+            ligne = int(input("Dans quel rang voulez vous jouer (0, 1 ou 2)?"))
+            col = int(input(f"Vous jouez dans le rang {ligne}, quelle case voulez vous jouer (0, 1 ou 2)?"))
 
             mystr = ''.join(matrice[0] + matrice[1] + matrice[2])
-            counterx = mystr.count('X')
-            countero = mystr.count('O')
+            counter_x = mystr.count('X')
+            counter_o = mystr.count('O')
             if matrice[ligne][col] != empty:
-                print('case déjà utilisée')
+                print('Case déjà utilisée. Veuillez entrer une case vide')
                 continue
             def playerx():
-                if counterx == countero:
+                if counter_x == counter_o:
                     matrice[ligne][col] = 'X'
-                elif counterx > countero:
+                elif counter_x > counter_o:
                     matrice[ligne][col] = 'O'
             def playero():
-                if countero == counterx:
+                if counter_o == counter_x:
                     matrice[ligne][col] = 'O'
-                elif counterx < countero:
+                elif counter_x < counter_o:
                     matrice[ligne][col] = 'X'
             if player == 'x':
                 playerx()
