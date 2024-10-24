@@ -1,10 +1,17 @@
+
+empty = ' '
+matrice = [
+    [empty for i in range(3)],
+    [empty for i in range(3)],
+    [empty for i in range(3)]
+]
+
+player  = input('Entrez le signe du joueur 1 (x ou o) : ')
+if player not in ['x', 'o']:
+    print('erreur')
+    exit()
+    
 def winorlose():
-    empty = ' '
-    matrice = [
-        [empty for i in range(3)],
-        [empty for i in range(3)],
-        [empty for i in range(3)]
-    ]
     counter = 0
     print("Bienvenue dans le tictactoe de Muriel, Sandra et Emmanuelle :)")
     print("La grille de jeu est agencée avec 9 cases. Voici les numéros de chaque case :")
