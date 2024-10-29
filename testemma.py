@@ -1,3 +1,4 @@
+
 empty = ' '
 #création de la grille avec des espaces vides
 matrice = [
@@ -6,14 +7,19 @@ matrice = [
     [empty for i in range(3)]
 ]
 print("Bienvenue dans le tictactoe de Muriel, Sandra et Emmanuelle :)")
-player  = input('Entrez le signe du joueur 1 (x ou o) : ')
+name1 = input('Entrez le prénom du joueur 1')
+player = input(f' Bonjour {name1}.Entrez votre symbole (x ou o) : ')
+name2 = input('Entrez le prénom du joueur 2.')
+print(f'bonjour {name2}.')
+
+# si le joueur1 a entré x alors le symbol est initialisé a X 
+# a chaque tour de boucle le symbol égal soit a X soit a O 
 # verification que l'utilisateur entre bien un x ou un o comme symbole
 if player not in ['x', 'o']:
     print('erreur')
-    exit()
+    startagain()
 
 def winorlose():
-    
     print("La grille de jeu est agencée en 9 cases. Voici les numéros de chaque case :")
     print("_____"*5)
     print("|"+"   "+"1"+"   "+"|"+"   "+"2"+"   "+"|"+"   "+"3"+"   "+"|")
@@ -79,49 +85,57 @@ def winorlose():
             print("|"+"_______"+"|"+"_______"+"|"+"_______"+"|")
             print("|"+"   "+f"{matrice[2][0]}"+"   "+"|"+"   "+f"{matrice[2][1]}"+"   "+"|"+"   "+f"{matrice[2][2]}"+"   "+"|")
             print("|"+"_______"+"|"+"_______"+"|"+"_______"+"|")
+    
+    
+
 # fonction pour indiquer si c'est le joueur 1 ou le joueur 2 qui gagne si le joueur 1 est x 
 def x_is_player1():
     if player == 'x':
-        print("Joueur 1 a gagné")
-    else : print("Joueur 2 a gagné")
+        print(f"{name1} a gagné")
+    else : print(f"{name2} a gagné")
+
 # fonction pour indiquer si c'est le joueur 1 ou le joueur 2 qui gange si le joueur est o
 def o_is_player1():
     if player == 'o':
-        print("Joueur 1 a gagné")
-    else : print("Joueur 2 a gagné")
+        print(f"{name1} a gagné")
+    else : print(f"{name2} a gagné")
 #fonction qui verifie les victoires de x
 def x_wins(c):
     # condition colonne    
     if matrice[0][c] == matrice[1][c] == matrice [2][c] == "X":
         x_is_player1()
-        exit()
+        startagain()
     # condition ligne
     if matrice[c] == ['X', 'X', 'X']:
         x_is_player1()
-        exit()
+        startagain()
     # diagonales
     if matrice [0][0] == matrice [1][1] == matrice [2][2] == "X":
         x_is_player1()
-        exit()
+        startagain()
     if matrice [0][2] == matrice [1][1] == matrice [2][0] == "X":
         x_is_player1()
-        exit()
+        startagain()
 #fonction qui vérifie les victoires de o
 def o_wins(c):
     #colonne
     if matrice[0][c] == matrice[1][c] == matrice [2][c] == "O":
         o_is_player1()
-        exit()
+        startagain()
     #ligne
     if matrice[c] == ["O","O","O"] :
         o_is_player1()
-        exit()
+        startagain()
     #diagonales
     if matrice [0][0] == matrice [1][1] == matrice [2][2] == "O":
         o_is_player1()
-        exit()
+        startagain()
     if matrice [0][2] == matrice [1][1] == matrice [2][0] == "O":
         o_is_player1()
-        exit()
+        startagain()
+def empty_grid():
+    matrice[0]= [' ',' ',' ']
+    matrice[1]= [' ',' ',' ']
+    matrice[2]= [' ',' ',' ']
+    return matrice
 #lancement du jeu
-winorlose()
