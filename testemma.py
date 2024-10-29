@@ -1,4 +1,3 @@
-
 empty = ' '
 #création de la grille avec des espaces vides
 matrice = [
@@ -17,7 +16,7 @@ print(f'bonjour {name2}.')
 # verification que l'utilisateur entre bien un x ou un o comme symbole
 if player not in ['x', 'o']:
     print('erreur')
-    startagain()
+    exit()
 
 def winorlose():
     print("La grille de jeu est agencée en 9 cases. Voici les numéros de chaque case :")
@@ -104,35 +103,35 @@ def x_wins(c):
     # condition colonne    
     if matrice[0][c] == matrice[1][c] == matrice [2][c] == "X":
         x_is_player1()
-        startagain()
+        exit()
     # condition ligne
     if matrice[c] == ['X', 'X', 'X']:
         x_is_player1()
-        startagain()
+        exit()
     # diagonales
     if matrice [0][0] == matrice [1][1] == matrice [2][2] == "X":
         x_is_player1()
-        startagain()
+        exit()
     if matrice [0][2] == matrice [1][1] == matrice [2][0] == "X":
         x_is_player1()
-        startagain()
+        exit()
 #fonction qui vérifie les victoires de o
 def o_wins(c):
     #colonne
     if matrice[0][c] == matrice[1][c] == matrice [2][c] == "O":
         o_is_player1()
-        startagain()
+        exit()
     #ligne
     if matrice[c] == ["O","O","O"] :
         o_is_player1()
-        startagain()
+        exit()
     #diagonales
     if matrice [0][0] == matrice [1][1] == matrice [2][2] == "O":
         o_is_player1()
-        startagain()
+        exit()
     if matrice [0][2] == matrice [1][1] == matrice [2][0] == "O":
         o_is_player1()
-        startagain()
+        exit()
 def empty_grid():
     matrice[0]= [' ',' ',' ']
     matrice[1]= [' ',' ',' ']
